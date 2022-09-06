@@ -7,6 +7,11 @@ const posts = await Discussion.find();
 res.status(200).json(posts)
 });
 
+const getDiscussionByID = asyncHandler(async (req, res) => {
+    const posts = await Discussion.findById(req.params.id);
+    res.status(200).json(posts)
+    });
+
 const postDiscussion = asyncHandler(async (req, res) => {
     const post = new Discussion(req.body);
 
@@ -16,8 +21,7 @@ const postDiscussion = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-    getAllDiscussions, postDiscussion
+    getAllDiscussions, getDiscussionByID, postDiscussion
 }
-
 
 
