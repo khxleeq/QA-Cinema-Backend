@@ -15,5 +15,8 @@ router.route('/:id')
 .put(updateBooking)
 .delete(deleteBooking)
 
+router.route('/:movie/:name')
+
+
 
 module.exports = router;

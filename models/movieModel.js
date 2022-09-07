@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const moviesSchema = mongoose.Schema({
-  title: {
+  fullTitle: {
     type: String,
     required: true,
     min: 2,
@@ -17,12 +17,12 @@ const moviesSchema = mongoose.Schema({
     required: true,
     min: 3
   },
-  director: {
+  directors: {
     type: String,
     required: true,
   },
   showtimes: {
-    type: Array,
+    type: String,
     required: false,
     min: 1,
   },
@@ -44,6 +44,10 @@ const moviesSchema = mongoose.Schema({
     type: String,
     required: false,
     min: 4
+  },
+  genre: {
+    type: String,
+    required: true,
   }
 });
 module.exports = mongoose.model('Movie', moviesSchema);
