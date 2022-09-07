@@ -21,4 +21,4 @@ const commentMovieSchema = mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Discussion', commentMovieSchema)
+module.exports = mongoose.model('MovieComment', commentMovieSchema)

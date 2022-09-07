@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 
 const discussionSchema = mongoose.Schema(
   {
+    topic: {
+      type: String,
+      required: true,
+    },
     topicAuthor: {
       type: String,
       required: true,

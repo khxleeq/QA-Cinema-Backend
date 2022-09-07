@@ -1,21 +1,21 @@
 const asyncHandler = require('express-async-handler'); //have functions in controller
 
-const Comment = require('../models/commentModel');
+const Post = require('../models/commentModel');
 
 const getAllComments = asyncHandler(async (req, res) => {
-const comments = await Discussion.find();
-res.status(200).json(comments)
+const posts = await Post.find();
+res.status(200).json(posts)
 });
 
 const getCommentByID = asyncHandler(async (req, res) => {
-    const comments = await Comment.findById(req.params.id);
-    res.status(200).json(comments)
+    const posts = await Post.findById(req.params.id);
+    res.status(200).json(posts)
     });
 
 const postComment = asyncHandler(async (req, res) => {
-    const comment = new Discussion(req.body);
+    const post = new Post(req.body);
 
-    const created = await comment.save();
+    const created = await post.save();
     res.status(200).json(created);
 
 });
