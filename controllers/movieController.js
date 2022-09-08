@@ -44,15 +44,16 @@ const getMovieByQuery = asyncHandler(async (req, res, next) => {
 //@access Private
 const postMovie = asyncHandler(async (req, res) => {
     const movies = await Movie.create({
-      title: req.body.title,
+      fullTitle: req.body.fullTitle,
       poster: req.body.poster,
       classification: req.body.classification,
       actors: req.body.actors,
-      director: req.body.director,
+      directors: req.body.directors,
       showtimes: req.body.showtimes,
       description: req.body.description,
       dateReleased: req.body.dateReleased,
       ratings: req.body.ratings,
+      genre: req.body.genre
     });
     res.status(200).json(movies);
 });
