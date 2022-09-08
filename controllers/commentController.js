@@ -8,8 +8,8 @@ res.status(200).json(posts)
 });
 
 const getCommentByID = asyncHandler(async (req, res) => {
-    const posts = await Post.findById(req.params.id);
-    res.status(200).json(posts)
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post)
     });
 
 const postComment = asyncHandler(async (req, res) => {
@@ -23,5 +23,3 @@ const postComment = asyncHandler(async (req, res) => {
 module.exports = {
     getAllComments, getCommentByID, postComment
 }
-
-

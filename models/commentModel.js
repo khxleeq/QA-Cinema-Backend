@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 
 const commentSchema = mongoose.Schema(
   {
+    topicID: {
+      type: String,
+      required: true,
+    },
+
     commentAuthor: {
       type: String,
       required: true,

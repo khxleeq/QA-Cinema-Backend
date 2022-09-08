@@ -1,11 +1,9 @@
-//import { discussionSchema } from './discussionModel'
 
-//const Station = mongoose.model('Station', StationSchema, 'FEMA_stations')
 
 const express = require('express');
 const router = express.Router();
 
-const {getAllDiscussions, postDiscussion, getDiscussionByID} = require("../controllers/discussionController");
+const {getAllDiscussions, postDiscussion, getDiscussionByID, deleteDiscussion} = require("../controllers/discussionController");
 
 router
 .route('/')
@@ -16,5 +14,6 @@ router.route('/post/')
 
 router.route('/:id')
 .get(getDiscussionByID)
+.delete(deleteDiscussion)
 
 module.exports = router;
