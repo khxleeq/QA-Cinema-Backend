@@ -2,13 +2,14 @@
 
 const mongoose = require('mongoose');
 
-const discussionSchema = mongoose.Schema(
+const commentSchema = mongoose.Schema(
   {
-    topic: {
+    topicID: {
       type: String,
       required: true,
     },
-    topicAuthor: {
+
+    commentAuthor: {
       type: String,
       required: true,
     },
@@ -25,4 +26,4 @@ const discussionSchema = mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Discussion', discussionSchema)
+module.exports = mongoose.model('Comment', commentSchema)
