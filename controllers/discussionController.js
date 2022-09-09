@@ -12,26 +12,46 @@ const getDiscussionByID = asyncHandler(async (req, res) => {
     res.status(200).json(posts)
     });
 
+
 const postDiscussion = asyncHandler(async (req, res) => {
-    const post = new Discussion(req.body);
-
-    const created = await post.save();
-    res.status(200).json(created);
-
+  const post = await Discussion.create({
+  topic: req.body.topic,
+  topicAuthor: req.body.topicAuthor,
+  comment: req.body.comment
+  });
+  res.status(201).json(post);
 });
-const deleteDiscussion = asyncHandler(async (req, res) => {
-const discussion = await Discussion.findById(req.params.id);
-if (!discussion) {
-  res.status(400).json({ message: `Discussion not found` });
-}
 
-await discussion.remove();
+// @desc  update Topic
+//@route  PUT /api/discussion/:id
+//@access Private
+const updateDiscussion = asyncHandler(async (req, res) => {
+    const discussion = await Discussion.findById(req.params.id);
+    if (!discussion) {
+      res.status(400).json({ message: `Topic not found` });
+    }
+    const updateSchema = await Discussion.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    res.status(200).json(updateSchema);
+  });
 
-res.status(200).json({ id: req.params.id });
-});
+  const deleteDiscussion = asyncHandler(async (req, res) => {
+    const discussion = await Discussion.findById(req.params.id);
+    if (!discussion) {
+      res.status(400).json({ message: `Movie not found` });
+    }
+  
+    await discussion.remove();
+  
+    res.status(204).json({ id: req.params.id });
+  });
+
 
 module.exports = {
-    getAllDiscussions, getDiscussionByID, postDiscussion, deleteDiscussion
+    getAllDiscussions, updateDiscussion, getDiscussionByID, postDiscussion, deleteDiscussion
 }
-
-
