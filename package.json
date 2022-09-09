@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./tests --reporter=nyan --exit",
+    "coverage": "nyc npm test",
     "dev": "nodemon server"
   },
   "keywords": [],
@@ -13,12 +14,16 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
+    "mocha": "^10.0.0",
     "mongoose": "^6.5.4",
     "nodemon": "^2.0.19",
+    "nyc": "^15.1.0",
     "react-bootstrap-accordion": "^1.0.0"
   }
 }

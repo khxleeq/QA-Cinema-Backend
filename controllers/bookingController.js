@@ -32,7 +32,7 @@ const postBooking = asyncHandler(async (req, res) => {
         ticketType: req.body.ticketType,
         name: req.body.name
     });
-    res.status(200).json(booking);
+    res.status(201).json(booking);
 });
 
 // @desc  get bookings
@@ -74,7 +74,7 @@ const deleteBooking = asyncHandler(async (req, res) => {
   
     await schema.remove();
   
-    res.status(200).json({ id: req.params.id });
+    res.status(204).json({ id: req.params.id });
   });
 
 module.exports = {

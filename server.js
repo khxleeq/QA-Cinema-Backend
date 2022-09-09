@@ -31,4 +31,7 @@ app.use('/api/discussion', discussionRoutes);
 
 
 
-app.listen(port, () => console.log(`Server port: ${port}`))
+const server = app.listen(port, () => console.log(`Server port: ${port}`))
+
+
+module.exports = server;

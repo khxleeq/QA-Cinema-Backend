@@ -6,6 +6,11 @@ const moviesSchema = mongoose.Schema({
     required: true,
     min: 2,
   },
+  poster: {
+    type: String,
+    required: false,
+    min: 4
+  },
   classification: {
     type: String,
     required: true,
@@ -39,11 +44,6 @@ const moviesSchema = mongoose.Schema({
   ratings: {
     type: Number,
     required: true,
-  },
-  poster: {
-    type: String,
-    required: false,
-    min: 4
   },
   genre: {
     type: String,
