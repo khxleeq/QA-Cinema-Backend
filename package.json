@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
-
-    "test": "mocha",
+    "test": "mocha ./tests --reporter=nyan --exit",
+    "coverage": "nyc npm test",
     "dev": "nodemon server"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
+    "istanbul": "^0.4.5",
     "mongoose": "^6.5.4",
     "nodemon": "^2.0.19",
     "nyc": "^15.1.0"

@@ -55,7 +55,7 @@ const postMovie = asyncHandler(async (req, res) => {
       ratings: req.body.ratings,
       genre: req.body.genre
     });
-    res.status(200).json(movies);
+    res.status(201).json(movies);
 });
 
 // @desc  get movies
@@ -97,7 +97,7 @@ const deleteMovie = asyncHandler(async (req, res) => {
   
     await movie.remove();
   
-    res.status(200).json({ id: req.params.id });
+    res.status(204).json({ id: req.params.id });
   });
 
 
