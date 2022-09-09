@@ -5,6 +5,6 @@ const { getApiKeys } = require('../controllers/apiKeyRelayController');
 
 router
 .route('/')
-.get(getApiKeys);
+.get(getApiKeys)
 
 module.exports = router;

@@ -16,7 +16,7 @@ const app = express();
 const bookingRoutes = require("./routes/bookingRoutes");
 const movieRoutes = require("./routes/moviesRoutes");
 const discussionRoutes = require("./routes/discussionRoutes");
-const apiKeyRelayRoutes = require('./routes/apiKeyRelayRoutes');
+const apiKeyRelayRoutes = require("./routes/apiKeyRelayRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 //const moviesCommentRoutes = require('./routes/moviesCommentRoutes');
 
