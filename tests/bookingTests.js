@@ -2,7 +2,7 @@
 const chai = require('chai');
 const chaiHTTP = require('chai-http');
 const { describe, it, beforeEach } = require('mocha');
-const server = require('../server.js');
+const server = require('../test-server.js');
 
 chai.use(chaiHTTP);
 const { expect } = require('chai');
