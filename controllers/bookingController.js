@@ -10,19 +10,29 @@ const getAllBookings = asyncHandler(async (req, res) => {
     res.status(200).json(bookings);
 })
 
+// @desc  get movie  by name =
+//@route  GET /api/booking
+//@access Private
+const getByMovieAndName = asyncHandler(async (req, res) => {
+  const {movie, name} = req.params;
+  const result = await bookingSchema.find({'title': movie, 'name': name});
+  res.status(200).json(result);
+});
+  
+
 // @desc  post booking
 //@route  POST /api/booking
 //@access Private
 const postBooking = asyncHandler(async (req, res) => {
     const booking = await Booking.create({
-        fullTitle: req.body.fullTitle,
+        title: req.body.title,
         date: req.body.date,
-        movieTime: req.body.movieTime,
+        time: req.body.time,
         seats: req.body.seats,
         ticketType: req.body.ticketType,
-        bookerName: req.body.bookerName
+        name: req.body.name
     });
-    res.status(200).json(booking);
+    res.status(201).json(booking);
 });
 
 // @desc  get bookings
@@ -64,9 +74,9 @@ const deleteBooking = asyncHandler(async (req, res) => {
   
     await schema.remove();
   
-    res.status(200).json({ id: req.params.id });
+    res.status(204).json({ id: req.params.id });
   });
 
 module.exports = {
-    getAllBookings, postBooking, getBookingByID, updateBooking, deleteBooking
+    getAllBookings, getByMovieAndName, postBooking, getBookingByID, updateBooking, deleteBooking
 }

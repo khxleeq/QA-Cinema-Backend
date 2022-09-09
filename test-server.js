@@ -1,6 +1,6 @@
 const express = require("express");
 const MongoDBConnect = require("./config/testdb");
-const port = process.env.PORT || 5000;
+const port = 10000;
 const dotenv = require("dotenv");
 require("dotenv").config({ path: "./config/.env" });
 const cors = require("cors");
@@ -16,6 +16,7 @@ const app = express();
 const bookingRoutes = require("./routes/bookingRoutes");
 const movieRoutes = require("./routes/moviesRoutes");
 const discussionRoutes = require("./routes/discussionRoutes");
+const apiKeyRelayRoutes = require("./routes/apiKeyRelayRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 //const moviesCommentRoutes = require('./routes/moviesCommentRoutes');
 
@@ -28,6 +29,7 @@ app.use("/api/booking", bookingRoutes);
 app.use("/api/movies", movieRoutes);
 app.use("/api/discussion", discussionRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api/apiKeyRelay", apiKeyRelayRoutes);
 //app.use('/api/movieComments', moviesCommentRoutes);
 
 const server = app.listen(port, () => console.log(`Server port: ${port}`));

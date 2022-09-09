@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const bookingSchema = mongoose.Schema(
   {
-    fullTitle: {
+    title: {
       type: String,
       required: true,
     },
@@ -10,7 +10,7 @@ const bookingSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    movieTime: {
+    time: {
       type: String,
       required: true,
     },
@@ -22,7 +22,7 @@ const bookingSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    bookerName: {
+    name: {
       type: String,
       required: true,
     },

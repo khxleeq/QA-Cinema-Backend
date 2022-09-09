@@ -18,8 +18,10 @@ const app = express()
 const bookingRoutes = require('./routes/bookingRoutes');
 const movieRoutes = require('./routes/moviesRoutes');
 const discussionRoutes = require('./routes/discussionRoutes');
+const apiKeyRelayRoutes = require('./routes/apiKeyRelayRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 //const moviesCommentRoutes = require('./routes/moviesCommentRoutes');
+
 
 app.use(express.json());
 app.use(cors());
@@ -30,9 +32,11 @@ app.use(bodyParser.json());
 app.use('/api/booking', bookingRoutes);
 app.use('/api/movies', movieRoutes);
 app.use('/api/discussion', discussionRoutes);
+app.use('/api/apiKeyRelay', apiKeyRelayRoutes);
 app.use('/api/comments', commentRoutes);
 //app.use('/api/movieComments', moviesCommentRoutes);
 
 const server = app.listen(port, () => console.log(`Server port: ${port}`))
 
 module.exports = server;
+
