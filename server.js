@@ -18,6 +18,7 @@ const app = express()
 const bookingRoutes = require('./routes/bookingRoutes');
 const movieRoutes = require('./routes/moviesRoutes');
 const discussionRoutes = require('./routes/discussionRoutes');
+const apiKeyRelayRoutes = require('./routes/apiKeyRelayRoutes');
 
 app.use(express.json());
 app.use(cors());
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 app.use('/api/booking', bookingRoutes);
 app.use('/api/movies', movieRoutes);
 app.use('/api/discussion', discussionRoutes);
+app.use('/api/apiKeyRelay', apiKeyRelayRoutes);
 
 
 
