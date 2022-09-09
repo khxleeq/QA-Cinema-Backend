@@ -33,5 +33,6 @@ app.use('/api/discussion', discussionRoutes);
 app.use('/api/comments', commentRoutes);
 //app.use('/api/movieComments', moviesCommentRoutes);
 
+const server = app.listen(port, () => console.log(`Server port: ${port}`))
 
-app.listen(port, () => console.log(`Server port: ${port}`))
+module.exports = server;
