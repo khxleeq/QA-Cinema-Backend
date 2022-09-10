@@ -47,6 +47,11 @@ const moviesSchema = mongoose.Schema({
   },
   genre: {
     type: String,
+    required: false,
+    min: 4
+  },
+  genre: {
+    type: String,
     required: true,
   }
 });
